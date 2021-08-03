@@ -1,6 +1,6 @@
-import AvatarImage from '../src/components/avatarImage';
-import Box from '../src/components/box';
-import MainGrid from '../src/components/mainGrid';
+import AvatarImage from '../src/components/AvatarImage';
+import Box from '../src/components/Box';
+import MainGrid from '../src/components/MainGrid';
 import { ProfileRelationsBoxWrapper } from '../src/components/ProfileRelations';
 import { AlurakutMenu, OrkutNostalgicIconSet } from '../src/lib/AlurakutCommons';
 

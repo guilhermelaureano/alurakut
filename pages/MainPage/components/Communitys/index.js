@@ -3,7 +3,7 @@ import { ProfileRelationsBoxWrapper } from '../../../../src/components/ProfileRe
 
 function Avatar ({ item }) {
   return (
-    <li key={item.name}>
+    <li>
       <a href={`/${item.url}`}>
         <AvatarImage src={item.avatar} />
         <span>{ item.name }</span>
@@ -15,8 +15,13 @@ function Avatar ({ item }) {
 const Communitys = ({entries, title}) => (
   <ProfileRelationsBoxWrapper>
     <h2 className="smallTitle">{title}({entries.length})</h2>
-    <ul>{entries.map((item) => <Avatar item={item} />)}</ul>
+    <ul>{entries.map((item) => <Avatar item={item} key={item.id} />)}</ul>
   </ProfileRelationsBoxWrapper>
 );
+
+Communitys.defaultProps = {
+  entries: [],
+  title: ''
+};
 
 export default Communitys;

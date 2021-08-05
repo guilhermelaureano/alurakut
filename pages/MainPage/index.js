@@ -7,29 +7,37 @@ import ProfileSideBar from './components/ProfileSideBar';
 import Welcome from './components/Welcome';
 
 const MainPage = () => {
-  const [ communitys, setCommunitys ] = useState([
-    { avatar: 'http://placehold.it/300x300', name: 'Alurakut', url: '' }
-  ]);
+  const date = new Date;
+  const [ communitys, setCommunitys ] = useState([{
+    avatar: 'http://placehold.it/300x300',
+    id: '2021-08-01T17:32:31.044Z',
+    name: 'Alurakut',
+    url: ''
+  }]);
 
   const user = 'guilhermelaureano';
   const people = [
     {
       avatar: 'https://github.com/guilhermelaureano.png',
+      id: '2021-08-05T17:32:31.044Z',
       name: 'guilhermelaureano',
       url: 'https://github.com/guilhermelaureano',
     },
     {
       avatar: 'https://github.com/peas.png',
+      id: '2021-08-04T17:32:31.044Z',
       name: 'peas',
       url: 'https://github.com/peas',
     },
     {
       avatar: 'https://github.com/omariosouto.png',
+      id: '2021-08-03T17:32:31.044Z',
       name: 'omariosouto',
       url: 'https://github.com/omariosouto',
     },
     {
       avatar: 'https://github.com/juunegreiros.png',
+      id: '2021-08-02T17:32:31.044Z',
       name: 'juunegreiros',
       url: 'https://github.com/juunegreiros',
     },
@@ -38,10 +46,11 @@ const MainPage = () => {
   const handleCreateCommunity = (e) => {
     e.preventDefault();
     const data = new FormData(e.target);
-    const name = data.get('title');
     const avatar = data.get('image');
+    const id = date.toISOString();
+    const name = data.get('title');
     
-    const newCommunity = { avatar, name, url: '' };
+    const newCommunity = { avatar, id, name, url: '' };
     setCommunitys([...communitys, newCommunity]);
   }
 
